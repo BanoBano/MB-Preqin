@@ -1,9 +1,11 @@
-// src/components/DataTable.test.tsx
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import DataTable from './DataTable';
 import { Firm } from '../models/Firm';
 
+
+// This is just an example unit test - the pother components should have similar tests, but I wanted to 
+// give a demonstration of more that could be done.
 const mockData: Firm[] = [
   {
     firm_id: 1,
@@ -12,7 +14,7 @@ const mockData: Firm[] = [
     date_added: new Date('2021-01-01'),
     last_updated: new Date('2021-06-01'),
     established_at: new Date('2000-01-01'),
-    firm_type: 'Private Equity',
+    firm_type: 'PE',
     city: 'New York',
     country: 'USA',
     address: '123 Wall Street',
@@ -25,7 +27,7 @@ const mockData: Firm[] = [
     date_added: new Date('2022-01-01'),
     last_updated: new Date('2022-06-01'),
     established_at: new Date('2010-01-01'),
-    firm_type: 'Hedge Funds',
+    firm_type: 'HF',
     city: 'San Francisco',
     country: 'USA',
     address: '456 Market Street',
