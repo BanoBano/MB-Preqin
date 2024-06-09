@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 import { Firm } from '../models/Firm';
 
 interface DataTableProps {
@@ -8,7 +9,7 @@ interface DataTableProps {
 const DataTable: React.FC<DataTableProps> = ({ data }) => {
   if (!data || data.length === 0) return <p>No data available</p>;
 
-  const headers = ['FirmId', 'FirmName', 'Type', 'DateAdded', 'Address'];
+  const headers = ['Firm ID', 'Firm Name', 'Type', 'Date Added', 'Address'];
 
   return (
     <div className="table-responsive">
@@ -24,7 +25,11 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
         {data.map((row) => (
           <tr key={row.firm_id}>
             <td>{row.firm_id}</td>
-            <td>{row.firm_name}</td>
+            <td>
+              <Link href={`/investors/${row.firm_id}`}>
+                  {row.firm_name}
+              </Link>
+            </td>
             <td>{row.firm_type}</td>
             <td>{new Date(row.date_added).toLocaleDateString()}</td>
             <td>{row.address}</td>

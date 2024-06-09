@@ -1,7 +1,7 @@
 export interface Firm {
-    firm_id: number; // Ensure this is a positive integer through validation
+    firm_id: number;
     firm_name: string;
-    AUM: number; // Ensure this is a positive integer through validation
+    AUM: number; 
     date_added: Date;
     last_updated: Date;
     established_at: Date;
