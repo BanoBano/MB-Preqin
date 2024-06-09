@@ -4,7 +4,7 @@ import DataTable from './DataTable';
 import { Firm } from '../models/Firm';
 
 
-// This is just an example unit test - the pother components should have similar tests, but I wanted to 
+// This is just an example unit test - the other components should have similar tests, but I wanted to 
 // give a demonstration of more that could be done.
 const mockData: Firm[] = [
   {

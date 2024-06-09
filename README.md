@@ -1,29 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is Matt Bano's submission to the preqin technical test.
+
+I have written Next.js/React/Typescript solution using the [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) workflow.
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+ - Run the API according to the instructions.
+ - Create and run the front-end Docker container:
+```
+docker build -t nextjs-docker .
+docker run -p 3000:3000 nextjs-docker
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to browse the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To instead run the (admittedly minimal) unit tests, or run in dev mode:
+```
+npm install
+npm test
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Background
 
-## Learn More
+It's no secret that the vast majority of my recent experience has been server-side, and I treated this as an opportunity to learn some React, as it matches the technology used by Preqin. A basic webpage with only two API calls and two pages seemed like a good opportunity to get some background.
 
-Matt's to-do
- - Unit tests!
- - Dockerise.
- - Line-by-line review
- - Document
+My approach can be seen in the commit history on the repo:
+ - Get the basic page, with the query of the investment firms working.
+ - Add basic CSS using Bootstrap.
+ - Add the second page with the commitment dropdown.
+ - Polish and tidy up, some bug fixes.
+ - Add unit tests using Jest.
+ - Add a Dockerfile - the default one for create-next-app worked without modification.
+
+ I did not use GitHub CoPilot, but I did make some use of ChatGPT:
+  - I couldn't find the JSON schema for the DTOs, so I got ChatGPT to translate the python objects found in the model directory.
+  - ChatGPT generated the miock data used in the DataTable.test.tsx file.
+  - While most of my React knowledge came from tutorials, I did find ChatGPT useful to clarify some points.
+
+## Im provement opportunities
+
+I did in truth spend rather longer than an hour on this, but there are still some things I would have liked to have done differently given more time:
+ - I should perhaps have a FirmList provider object that could be injected into each page rather than repeating the API call.
+ - More util functions to do things like capitalise 'bank' would make the site look more professional.
+ - Only one component has unit tests. Similar tests should be written for all components, as well as other aspects of the site.
+ - While the testing does seem to work I did do rather more trial-and-error on the Babel and Jest aspects and do not understand them as wellas I might wish.

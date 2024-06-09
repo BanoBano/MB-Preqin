@@ -9,7 +9,7 @@ import { Firm } from '../../../models/Firm';
 import CommitmentTable from '@/components/CommitmentTable';
 import { Commitment } from '@/models/Commitment';
 
-export const findFirmById = (firms: Firm[], id: number): Firm | undefined => {
+const findFirmById = (firms: Firm[], id: number): Firm | undefined => {
   return firms.find(firm => firm.firm_id === id);
 };
 
