@@ -2,13 +2,14 @@ import React from 'react';
 import { Commitment } from '../models/Commitment';
 
 interface CommitmentTableProps {
-  data: Commitment[];
+  data: Commitment[] | undefined;
 }
 
 const CommitmentTable: React.FC<CommitmentTableProps> = ({ data }) => {
-  if (!data || data.length === 0) return <p>No data available</p>;
+  if (!data) return <div/>
+  if (data.length === 0) return <p>No comittments of this type</p>;
 
-  const headers = ['ID', 'Asset Class', 'Currency', 'Firm ID', 'Amount'];
+  const headers = ['ID', 'Currency', 'Amount'];
 
   return (
     <div className="table-responsive">
@@ -24,9 +25,7 @@ const CommitmentTable: React.FC<CommitmentTableProps> = ({ data }) => {
         {data.map((row) => (
           <tr key={row.id}>
             <td>{row.id}</td>
-            <td>{row.asset_class}</td>
             <td>{row.currency}</td>
-            <td>{row.firm_id}</td>
             <td>{row.amount}</td>
           </tr>
         ))}

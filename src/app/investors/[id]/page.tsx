@@ -17,7 +17,7 @@ const FirmDetails: React.FC = () => {
  
   const params  = useParams<{id: string}>();
   const id = Number(params.id);
-  const [commitments, setCommitments] = useState<Commitment[]>([]);
+  const [commitments, setCommitments] = useState<Commitment[] | undefined>([]);
   const [firm, setFirm] = useState<Firm | undefined>(undefined);
   
   const [loading, setLoading] = useState<boolean>(true);
@@ -44,6 +44,10 @@ const FirmDetails: React.FC = () => {
           setCommitments(dataC);
         });
     }
+    if (selectedInvestmentType === '')
+    {
+      setCommitments(undefined);
+    }
   }, [id, selectedInvestmentType]);
 
 
@@ -55,7 +59,6 @@ const FirmDetails: React.FC = () => {
     <div>
       <SingleFirmTable firm={firm} />
       <DropDown selectedValue={selectedInvestmentType} onChange={handleDropdownChange} />
-      <p>Selected Investment Type: {selectedInvestmentType}</p>
       <CommitmentTable data={commitments} />
     </div>
   );

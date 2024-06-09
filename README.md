@@ -23,9 +23,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ## Learn More
 
 Matt's to-do
- - Home/back button
- - Remove unncessary table bits, add headers
- - Format AUM
+ - Unit tests!
  - Dockerise.
  - Line-by-line review
  - Document
