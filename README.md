@@ -34,13 +34,13 @@ My approach can be seen in the commit history on the repo:
 
  I did not use GitHub CoPilot, but I did make some use of ChatGPT:
   - I couldn't find the JSON schema for the DTOs, so I got ChatGPT to translate the python objects found in the model directory.
-  - ChatGPT generated the miock data used in the DataTable.test.tsx file.
+  - ChatGPT generated the mock data used in the DataTable.test.tsx file.
   - While most of my React knowledge came from tutorials, I did find ChatGPT useful to clarify some points.
 
 ## Im provement opportunities
 
 I did in truth spend rather longer than an hour on this, but there are still some things I would have liked to have done differently given more time:
- - I should perhaps have a FirmList provider object that could be injected into each page rather than repeating the API call.
+ - I should perhaps have a FirmListProvider object that could be injected into each page rather than repeating the API call.
  - More util functions to do things like capitalise 'bank' would make the site look more professional.
  - Only one component has unit tests. Similar tests should be written for all components, as well as other aspects of the site.
- - While the testing does seem to work I did do rather more trial-and-error on the Babel and Jest aspects and do not understand them as wellas I might wish.
+ - While the testing does seem to work I did do rather more trial-and-error on the Babel and Jest configuration and do not understand them as well as I might wish.
