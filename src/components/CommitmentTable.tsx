@@ -7,7 +7,7 @@ interface CommitmentTableProps {
 
 const CommitmentTable: React.FC<CommitmentTableProps> = ({ data }) => {
   if (!data) return <div/>
-  if (data.length === 0) return <p>No comittments of this type</p>;
+  if (data.length === 0) return <p>No comitments of this type</p>;
 
   const headers = ['ID', 'Currency', 'Amount'];
 
