@@ -38,7 +38,7 @@ My approach can be seen in the commit history on the repo:
   - ChatGPT generated the mock data used in the DataTable.test.tsx file.
   - While most of my React knowledge came from tutorials, I did find ChatGPT useful to clarify some points.
 
-## Im provement opportunities
+## Improvement opportunities
 
 I did in truth spend rather longer than an hour on this, but there are still some things I would have liked to have done differently given more time:
  - I should perhaps have a FirmListProvider object that could be injected into each page rather than repeating the API call.
